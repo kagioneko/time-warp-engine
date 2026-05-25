@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "time-warp-engine"
+version = "0.1.0"
+description = "Subjective time perception layer for LLM agents — powered by NeuroState"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov"]
+
+[project.scripts]
+timewarp = "timewarp.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/timewarp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
